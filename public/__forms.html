@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Form Detection</title>
+</head>
+<body>
+  <!--
+    This page exists only so Netlify's build-time bot can discover the
+    "contact" form definition. Next.js renders the real contact form
+    client-side (src/components/sections/ContactForm.tsx), which Netlify's
+    static HTML scanner can't see on its own — this static duplicate,
+    copied verbatim from /public into the deploy output, registers the form
+    name and field list so real submissions (sent via fetch from the live
+    form) are correctly captured by Netlify Forms. This page itself is
+    never linked to or visited by users.
+  -->
+  <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact" />
+    <label>Don't fill this out: <input name="bot-field" /></label>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <select name="projectType">
+      <option value="Residential">Residential</option>
+      <option value="Commercial">Commercial</option>
+      <option value="Institutional">Institutional</option>
+      <option value="Interior">Interior</option>
+      <option value="Urban Planning">Urban Planning</option>
+      <option value="Other">Other</option>
+    </select>
+    <textarea name="message"></textarea>
+  </form>
+</body>
+</html>

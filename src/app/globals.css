@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f7f6f3;
+  color: #0a0a0a;
+}
+
+@layer base {
+  ::selection {
+    background-color: #a98554;
+    color: #f7f6f3;
+  }
+
+  :focus-visible {
+    outline: 2px solid #a98554;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Eyebrow / drafting-label style used across sections */
+  .label-tag {
+    @apply font-mono text-[11px] uppercase tracking-widest2 text-brass;
+  }
+
+  /* Hairline rule, used to echo architectural drawing lines */
+  .rule {
+    @apply h-px w-full bg-hairline;
+  }
+
+  /* Blueprint corner coordinate marks — signature motif */
+  .blueprint-corner {
+    @apply pointer-events-none absolute font-mono text-[10px] tracking-widest text-stone/60;
+  }
+
+  .container-studio {
+    @apply mx-auto w-full max-w-8xl px-6 md:px-10 lg:px-16;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
