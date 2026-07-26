@@ -44,7 +44,14 @@ export default function ContactForm() {
 
     setSubmitting(true);
     try {
-      const response = await fetch("/", {
+      // Post to the static decoy form page, not "/" — the Contact and Home
+      // pages both use `dynamic = "force-dynamic"` for live Supabase data,
+      // which means "/" is served by the Next.js server function rather
+      // than as a static file. Netlify's form-capture only intercepts POSTs
+      // to genuinely static asset paths *before* they reach that function;
+      // public/__forms.html is copied verbatim into the deploy output with
+      // nothing dynamic behind it, so Netlify can actually catch this one.
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encodeFormData(payload),
