@@ -14,6 +14,7 @@ const config: Config = {
         charcoal: "#2B2B28",
         stone: "#8C8C87",
         hairline: "#DEDBD3",
+        logo: "#F9EBEA",
         brass: {
           DEFAULT: "#A98554",
           light: "#C7A87D",

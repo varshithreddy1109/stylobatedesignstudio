@@ -27,7 +27,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-studio ${
         scrolled
-          ? "bg-paper/90 backdrop-blur-md border-b border-hairline"
+          ? "bg-logo border-b border-hairline"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -90,7 +90,7 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       <div
-        className={`md:hidden fixed inset-0 top-20 bg-paper transition-transform duration-500 ease-studio ${
+        className={`md:hidden fixed inset-0 top-20 bg-logo transition-transform duration-500 ease-studio ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

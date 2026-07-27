@@ -125,7 +125,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               src={embedUrl}
               title={`${project.title} video`}
               className="h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
               allowFullScreen
             />
           </div>
